@@ -1,0 +1,7 @@
+{
+  "name": "ionic-nasa-apod",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
