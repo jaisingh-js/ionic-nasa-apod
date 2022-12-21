@@ -1,1 +1,15 @@
-<ion-item></ion-item>
+<ion-card>
+  <ion-card-header>
+    <div class="center-div ion-margin">
+      <div>
+        <ion-img class="small-image" [src]="imageData?.url"></ion-img>
+      </div>
+    </div>
+    <ion-card-title>{{ imageData?.title }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-label><strong>Explanation: </strong></ion-label>
+    <ion-text>{{ imageData?.explanation }}</ion-text>
+  </ion-card-content>
+</ion-card>

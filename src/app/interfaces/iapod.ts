@@ -1,7 +1,7 @@
 export interface IApod {
     title: string;
     url: string;
-    explaination: string;
+    explanation: string;
     date: string;
     hdurl: string;
 }

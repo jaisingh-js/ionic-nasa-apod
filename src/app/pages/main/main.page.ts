@@ -14,7 +14,9 @@ export class MainPage implements OnInit {
   constructor(private astroService: AstropodService) { }
 
   ngOnInit() {
-    this.astroService.getApod().subscribe((data) => this.todayImage = data);
+    this.astroService.getApod().subscribe((data) => {
+      this.todayImage = data;
+    });
   }
 
   getYesterdayPic() {

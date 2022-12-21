@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ImagecardComponent } from './components/imagecard/imagecard.component';
+import { IonicModule } from '@ionic/angular';
+import { HeaderComponent } from './components/header/header.component';
 
 
 
 @NgModule({
-  declarations: [ImagecardComponent],
+  declarations: [ImagecardComponent, HeaderComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    IonicModule
   ],
-  exports: [ImagecardComponent]
+  exports: [ImagecardComponent, HeaderComponent]
 })
 export class SharedModule { }

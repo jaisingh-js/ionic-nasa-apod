@@ -4,19 +4,20 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MainPageRoutingModule } from './main-routing.module';
+import { PicbydatePageRoutingModule } from './picbydate-routing.module';
 
-import { MainPage } from './main.page';
+import { PicbydatePage } from './picbydate.page';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { PicSliderComponent } from './pic-slider/pic-slider.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MainPageRoutingModule,
+    PicbydatePageRoutingModule,
     SharedModule
   ],
-  declarations: [MainPage]
+  declarations: [PicbydatePage, PicSliderComponent]
 })
-export class MainPageModule {}
+export class PicbydatePageModule {}

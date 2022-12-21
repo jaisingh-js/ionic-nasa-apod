@@ -1,0 +1,43 @@
+<app-header title="Image By Date"></app-header>
+
+<ion-content>
+  <ion-datetime-button
+    class="ion-margin"
+    datetime="datetime"
+  ></ion-datetime-button>
+
+  <ion-popover [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime
+        showDefaultButtons="true"
+        [(ngModel)]="date"
+        (ionChange)="newDate($event)"
+        presentation="date"
+        id="datetime"
+        [max]="max"
+        [min]="min"
+      ></ion-datetime>
+    </ng-template>
+  </ion-popover>
+
+  <!-- <ion-slides
+    (ionSlideNextStart)="nextSlide()"
+    (ionSlidePrevStart)="prevSlide()"
+  > -->
+  <div *ngIf="loading" class="center-spinner">
+    <ion-spinner name="crescent"></ion-spinner>
+  </div>
+
+  <app-imagecard *ngIf="!loading" [imageData]="imageData"></app-imagecard>
+
+  <!-- <ion-slide>
+      <app-pic-slider [date]="date"></app-pic-slider>
+    </ion-slide>
+    <ion-slide>
+      <app-pic-slider [date]="date"></app-pic-slider>
+    </ion-slide>
+    <ion-slide>
+      <app-pic-slider [date]="prevDate"></app-pic-slider>
+    </ion-slide>
+  </ion-slides> -->
+</ion-content>

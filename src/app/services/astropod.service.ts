@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { IApod } from '../interfaces/iapod';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +16,7 @@ export class AstropodService {
     return this.http.get<any>(this.apiUrl);
   }
 
-  getImageOn(date: string) {
-    return this.http.get<any>(this.apiUrl + '&date=' + date);
+  getImageOn(date: string): Observable<IApod> {
+    return this.http.get<IApod>(this.apiUrl + '&date=' + date);
   }
 }

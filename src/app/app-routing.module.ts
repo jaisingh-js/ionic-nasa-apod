@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'main',
     loadChildren: () => import('./pages/main/main.module').then( m => m.MainPageModule)
   },
+  {
+    path: 'picbydate',
+    loadChildren: () => import('./pages/picbydate/picbydate.module').then( m => m.PicbydatePageModule)
+  },
 ];
 
 @NgModule({
