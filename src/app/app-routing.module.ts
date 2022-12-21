@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'picbydate',
     loadChildren: () => import('./pages/picbydate/picbydate.module').then( m => m.PicbydatePageModule)
   },
+  {
+    path: 'picslides',
+    loadChildren: () => import('./pages/picslides/picslides.module').then( m => m.PicslidesPageModule)
+  },
 ];
 
 @NgModule({

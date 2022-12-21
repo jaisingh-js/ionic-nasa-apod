@@ -18,6 +18,7 @@ import { PicSliderComponent } from './pic-slider/pic-slider.component';
     PicbydatePageRoutingModule,
     SharedModule
   ],
-  declarations: [PicbydatePage, PicSliderComponent]
+  declarations: [PicbydatePage, PicSliderComponent],
+  exports: [PicSliderComponent]
 })
 export class PicbydatePageModule {}

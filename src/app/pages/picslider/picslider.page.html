@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>picslider</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-item><ion-label>{{date}}</ion-label></ion-item>
+  <ion-button (click)="decrementDate()">Decrement Date</ion-button>
+  <ion-button (click)="incrementDate()">Increment Date</ion-button> -->
+
+  <ion-slides
+    [options]="sliderOpts"
+    #ionSlider
+    (ionSlidePrevStart)="prevSlideStart()"
+    (ionSlideNextStart)="nextSlideStart()"
+  >
+    <ion-slide *ngFor="let slide of slides">
+      <app-imagecard [imageData]="slide"></app-imagecard>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

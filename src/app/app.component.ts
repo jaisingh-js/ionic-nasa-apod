@@ -15,6 +15,10 @@ export class AppComponent {
     {
       label: 'pic by date',
       url: '/picbydate'
+    },
+    {
+      label: 'pic slides',
+      url: '/picslides'
     }
   ];
 

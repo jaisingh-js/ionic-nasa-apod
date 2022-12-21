@@ -1,0 +1,13 @@
+<app-header title="pic slides"></app-header>
+
+<ion-content>
+  <ion-slides
+    #ionSlider
+    (ionSlidePrevStart)="prevSlideStart()"
+    (ionSlideNextStart)="nextSlideStart()"
+  >
+    <ion-slide *ngFor="let date of dates">
+      <app-dynamic-imagecard [date]="date"></app-dynamic-imagecard>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
