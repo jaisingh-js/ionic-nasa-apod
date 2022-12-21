@@ -9,23 +9,12 @@ import { AppconfigService } from 'src/app/services/appconfig.service';
 })
 export class HeaderComponent implements OnInit {
   @Input() title?: string;
-  links = [
-    {
-      label: 'pic of day',
-      url: '/'
-    },
-    {
-      label: 'pic by date',
-      url: '/picbydate'
-    }
-  ];
+  
 
-  constructor(private appConfig: AppconfigService, private navCtrl: NavController) { }
+  constructor() { }
 
   ngOnInit() { }
 
-  goto(url: string) {
-    this.navCtrl.navigateForward(url);
-  }
+  
 
 }
