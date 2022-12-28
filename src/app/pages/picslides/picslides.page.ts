@@ -1,4 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonicSlides } from '@ionic/angular';
+import  SwiperCore, { EffectCards, EffectCube, EffectFade, Virtual }  from 'swiper';
+
+SwiperCore.use([Virtual ,IonicSlides]);
 
 @Component({
   selector: 'app-picslides',
@@ -8,11 +12,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 export class PicslidesPage implements OnInit {
   dates: Date[] = [];
   elementCount = 10;
-  @ViewChild('ionSlider') ionSlider: any;
+  swiper: any;
   count: number = 0;
   activeIndex = 0;
   ionOpts = {
-    initialSlide: this.activeIndex
+    // loop: true
   };
 
   constructor() { }
@@ -26,16 +30,12 @@ export class PicslidesPage implements OnInit {
   }
 
   prevSlideStart() {
-    if (this.count < 5) {
-      return;
-    }
+    // if (this.count < 5) {
+    //   return;
+    // }
   }
 
   nextSlideStart() {
-    if (this.count < 5) {
-      this.count++;
-      return;
-    }
     const date = this.dates[this.dates.length - 1];
     this.dates.push(this.getDiffDate(date, 1));
     // console.log(this.dates);
@@ -48,9 +48,12 @@ export class PicslidesPage implements OnInit {
     return newDate;
   }
 
-  getActiveIndex() {
-    this.ionSlider.getActiveIndex()
-      .then((data: any) => this.activeIndex = data);
+  // getActiveIndex() {
+  //   this.activeIndex = this.swiper.activeIndex;
+  // }
+
+  setSwiperInstance(ev: any) {
+    this.swiper = ev;
   }
 
 

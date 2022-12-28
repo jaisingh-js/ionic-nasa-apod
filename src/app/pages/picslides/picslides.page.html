@@ -1,7 +1,8 @@
 <app-header title="pic slides"></app-header>
 
 <ion-content>
-  <ion-slides
+  <!-- <ion-slides
+    [options]="ionOpts"
     #ionSlider
     (ionSlidePrevStart)="prevSlideStart()"
     (ionSlideNextStart)="nextSlideStart()"
@@ -9,5 +10,18 @@
     <ion-slide *ngFor="let date of dates">
       <app-dynamic-imagecard [date]="date"></app-dynamic-imagecard>
     </ion-slide>
-  </ion-slides>
+  </ion-slides> -->
+
+  <swiper
+    [virtual]="true"
+    (swiper)="setSwiperInstance($event)"
+    [config]="ionOpts"
+    #swiper
+    (slideNextTransitionStart)="nextSlideStart()"
+    (slidePrevTransitionStart)="prevSlideStart()"
+  >
+    <ng-template swiperSlide *ngFor="let date of dates"
+      ><app-dynamic-imagecard [date]="date"></app-dynamic-imagecard
+    ></ng-template>
+  </swiper>
 </ion-content>
